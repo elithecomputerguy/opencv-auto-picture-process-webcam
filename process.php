@@ -1,9 +1,10 @@
 <?php
 session_start();
-$_SESSION['run_time'] = time();
 
 $filter = $_POST['filter'];
 $number = $_POST['number'];
+
+$_SESSION['run_time'] = time();
 $_SESSION['number'] = $number;
 $_SESSION['filter'] = $filter;
 

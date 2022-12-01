@@ -3,10 +3,8 @@ session_start();
 include './header.php';
 
 $pic_size = 300;
-//$pic_num = 10;
-$key_array = array();
 
-//$run_time = time();
+$key_array = array();
 
 $file = file("./pic-data.txt");
 
@@ -52,29 +50,21 @@ foreach($key_array as $pic =>$xy){
     echo "<div style='position:relative;'>";
     echo "<img src='$pic' style='width:$pic_size; height:auto;'>";
 
-
-
     foreach($box as $coordinates){
             $coordinates = trim($coordinates);
             $coordinates = ltrim($coordinates, "'");
             $coordinates = rtrim($coordinates, "'");
 
-
             $resize_percent = $pic_size / $width;
-            //echo "$resize_percent %<br>";
             $resize_height = $height * $resize_percent;
-
-
-        
+    
             $val = explode(",", $coordinates);
             $x_axis = $val[0] * $resize_percent;
             $y_axis = $val[1] * $resize_percent;
             $box_height = $val[3] * $resize_percent;
             $box_width = $val[2] * $resize_percent;
 
-
-            echo "<div style='position:absolute; top:$y_axis; left:$x_axis;border: 5px solid red;width:$box_width;height:$box_height;'></div>";
-        
+            echo "<div style='position:absolute; top:$y_axis; left:$x_axis;border: 5px solid red;width:$box_width;height:$box_height;'></div>";     
     }
     echo "</div>";
     echo "</div>";
