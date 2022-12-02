@@ -11,3 +11,6 @@ Prerequisites:
     We use shell_exec() in PHP to trigger the python script
   -Create pics folder and giev appropriate permissions
   -Copy OpenCV data folder into web app root directory
+
+
+YouTube Demo: https://youtu.be/UnI9Mf1UhJ4
